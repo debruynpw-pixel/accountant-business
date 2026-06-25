@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Accountant Business — Accounting, Tax &amp; Advisory for South Africa</title>
+<meta name="description" content="Full-service accounting firm: tax &amp; SARS, bookkeeping, payroll, VAT, financial statements, CIPC registration and business advisory. Clarity in every number." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --leaf-light:#9CCC65;
+  --leaf:#6FA63C;
+  --leaf-2:#5E9A2E;
+  --leaf-deep:#3E7D1E;
+  --ink:#2C2A26;
+  --ink-soft:#5b574f;
+  --bg:#ffffff;
+  --bg-soft:#F4F8EE;
+  --bg-soft-2:#EEF5E4;
+  --line:#e6e9e0;
+  --white:#ffffff;
+  --shadow:0 1px 2px rgba(44,42,38,.04),0 8px 24px rgba(44,42,38,.06);
+  --shadow-lg:0 24px 60px rgba(62,125,30,.14);
+  --radius:18px;
+  --radius-sm:12px;
+  --maxw:1180px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Manrope',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.12;letter-spacing:-.02em;color:var(--ink)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--leaf-deep);background:var(--bg-soft-2);
+  padding:7px 14px;border-radius:999px;border:1px solid var(--line);
+}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:'Sora',sans-serif;font-weight:600;font-size:.96rem;
+  padding:14px 26px;border-radius:999px;cursor:pointer;border:none;
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s;
+}
+.btn-primary{background:var(--leaf-deep);color:#fff;box-shadow:0 8px 22px rgba(62,125,30,.28)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(62,125,30,.36)}
+.btn-ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.btn-ghost:hover{border-color:var(--leaf);color:var(--leaf-deep);transform:translateY(-2px)}
+.btn-lg{padding:17px 34px;font-size:1.02rem}
+
+/* ===== NAV ===== */
+header.nav{
+  position:fixed;top:0;left:0;right:0;z-index:90;
+  background:rgba(255,255,255,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:.3s var(--ease);
+}
+header.nav.scrolled{border-bottom-color:var(--line);box-shadow:0 4px 24px rgba(44,42,38,.05)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:11px;font-family:'Sora';font-weight:800;font-size:1.18rem;letter-spacing:-.01em}
+.brand .mark{width:40px;height:40px;flex:0 0 40px}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a{font-size:.94rem;font-weight:600;color:var(--ink-soft);transition:color .2s;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:2px;background:var(--leaf);transition:width .25s var(--ease)}
+.nav-links a:hover{color:var(--ink)}.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+.burger span{width:24px;height:2.5px;background:var(--ink);border-radius:2px;transition:.3s}
+
+/* ===== HERO ===== */
+.hero{position:relative;padding:148px 0 90px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero-grid{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:center;position:relative;z-index:2;
+}
+.hero h1{font-size:clamp(2.4rem,5vw,3.9rem);font-weight:800;margin:20px 0 18px}
+.hero h1 .accent{color:var(--leaf-deep);position:relative;white-space:nowrap}
+.hero h1 .accent svg{position:absolute;left:0;bottom:-10px;width:100%;height:14px}
+.hero p.lead{font-size:1.16rem;color:var(--ink-soft);max-width:540px;margin-bottom:30px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-trust{display:flex;gap:28px;margin-top:38px;flex-wrap:wrap}
+.hero-trust .t{display:flex;flex-direction:column}
+.hero-trust .t b{font-family:'Sora';font-size:1.7rem;font-weight:800;color:var(--ink);line-height:1}
+.hero-trust .t span{font-size:.84rem;color:var(--ink-soft);margin-top:4px}
+
+/* hero visual card */
+.hero-visual{position:relative}
+.hero-card{
+  background:#fff;border:1px solid var(--line);border-radius:24px;padding:26px;
+  box-shadow:var(--shadow-lg);position:relative;z-index:2;
+}
+.hero-card .hc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.hero-card .hc-top h4{font-size:1.05rem}
+.hc-badge{font-size:.72rem;font-weight:700;color:var(--leaf-deep);background:var(--bg-soft-2);padding:5px 11px;border-radius:999px}
+.hc-row{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px dashed var(--line)}
+.hc-row:last-child{border-bottom:none}
+.hc-row .l{display:flex;align-items:center;gap:11px;font-size:.92rem;color:var(--ink-soft);font-weight:600}
+.hc-row .l .dot{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:var(--bg-soft);color:var(--leaf-deep)}
+.hc-row .v{font-family:'Sora';font-weight:700;color:var(--ink)}
+.hc-bar{height:8px;border-radius:99px;background:var(--bg-soft-2);overflow:hidden;margin-top:18px}
+.hc-bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--leaf-light),var(--leaf-deep));transition:width 1.4s var(--ease)}
+.float-chip{
+  position:absolute;background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:11px 15px;box-shadow:var(--shadow);display:flex;align-items:center;gap:9px;z-index:3;
+  font-size:.86rem;font-weight:700;
+}
+.float-chip .ic{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--leaf-deep);color:#fff}
+.fc-1{top:-22px;right:18px;animation:floaty 5s ease-in-out infinite}
+.fc-2{bottom:-20px;left:-14px;animation:floaty 6s ease-in-out infinite .8s}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ===== marquee ===== */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-soft);padding:18px 0;overflow:hidden}
+.marquee .track{display:flex;gap:54px;white-space:nowrap;animation:scroll 28s linear infinite;width:max-content}
+.marquee .track span{font-family:'Sora';font-weight:600;color:var(--ink-soft);font-size:.96rem;display:flex;align-items:center;gap:54px}
+.marquee .track span::after{content:"✦";color:var(--leaf)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ===== SECTION base ===== */
+section{position:relative}
+.sec{padding:96px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 56px}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:800;margin:16px 0 14px}
+.sec-head p{color:var(--ink-soft);font-size:1.08rem}
+
+/* ===== SERVICES ===== */
+.grid-services{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.svc{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s;position:relative;overflow:hidden;
+}
+.svc::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--leaf-light),var(--leaf-deep));transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.svc:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:transparent}
+.svc:hover::before{transform:scaleX(1)}
+.svc .ic{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;background:var(--bg-soft-2);color:var(--leaf-deep);margin-bottom:18px;transition:.35s}
+.svc:hover .ic{background:var(--leaf-deep);color:#fff;transform:rotate(-6deg)}
+.svc h3{font-size:1.18rem;margin-bottom:9px}
+.svc p{color:var(--ink-soft);font-size:.95rem;margin-bottom:14px}
+.svc .lk{font-weight:700;font-size:.9rem;color:var(--leaf-deep);display:inline-flex;align-items:center;gap:6px;transition:gap .2s}
+.svc:hover .lk{gap:11px}
+
+/* ===== WHY / FEATURES ===== */
+.why{background:var(--bg-soft)}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.why-list{display:flex;flex-direction:column;gap:22px}
+.why-item{display:flex;gap:16px;align-items:flex-start}
+.why-item .n{flex:0 0 46px;width:46px;height:46px;border-radius:13px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;color:var(--leaf-deep);box-shadow:var(--shadow)}
+.why-item h4{font-size:1.12rem;margin-bottom:5px}
+.why-item p{color:var(--ink-soft);font-size:.95rem}
+.why-visual{position:relative;background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px;box-shadow:var(--shadow-lg)}
+
+/* ===== PROCESS ===== */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:s}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;position:relative}
+.step .num{font-family:'Sora';font-weight:800;font-size:2.4rem;color:var(--bg-soft-2);line-height:1;position:absolute;top:18px;right:20px;transition:.3s}
+.step:hover .num{color:var(--leaf-light)}
+.step .ic{width:46px;height:46px;border-radius:12px;background:var(--bg-soft-2);color:var(--leaf-deep);display:grid;place-items:center;margin-bottom:16px}
+.step h4{font-size:1.08rem;margin-bottom:7px}
+.step p{color:var(--ink-soft);font-size:.92rem}
+
+/* ===== CALCULATOR ===== */
+.calc{background:linear-gradient(160deg,#fff,var(--bg-soft))}
+.calc-card{
+  max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--line);
+  border-radius:24px;padding:40px;box-shadow:var(--shadow-lg);
+}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field label{font-size:.86rem;font-weight:700;color:var(--ink)}
+.field select,.field input{
+  padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;font-family:inherit;font-size:.95rem;
+  background:#fff;color:var(--ink);transition:border-color .2s,box-shadow .2s;
+}
+.field select:focus,.field input:focus{outline:none;border-color:var(--leaf);box-shadow:0 0 0 4px rgba(111,166,60,.12)}
+.calc-out{margin-top:10px;background:var(--bg-soft-2);border-radius:16px;padding:26px;text-align:center}
+.calc-out .est{font-family:'Sora';font-weight:800;font-size:2.6rem;color:var(--leaf-deep);line-height:1}
+.calc-out .lbl{font-size:.86rem;color:var(--ink-soft);margin:6px 0 16px}
+.calc-note{font-size:.78rem;color:var(--ink-soft);text-align:center;margin-top:14px}
+
+/* ===== TESTIMONIALS ===== */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.3s var(--ease)}
+.tcard:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.tcard .stars{color:var(--leaf);font-size:1rem;letter-spacing:2px;margin-bottom:12px}
+.tcard p{font-size:.98rem;color:var(--ink);margin-bottom:18px;font-weight:500}
+.tcard .who{display:flex;align-items:center;gap:12px}
+.tcard .av{width:44px;height:44px;border-radius:50%;background:var(--leaf-deep);color:#fff;display:grid;place-items:center;font-family:'Sora';font-weight:700}
+.tcard .who b{font-size:.94rem;display:block}
+.tcard .who span{font-size:.82rem;color:var(--ink-soft)}
+
+/* ===== FAQ ===== */
+.faq{max-width:780px;margin:0 auto}
+.q{background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden;transition:.3s}
+.q.open{box-shadow:var(--shadow);border-color:var(--leaf-light)}
+.q button{width:100%;text-align:left;background:none;border:none;padding:20px 22px;font-family:'Sora';font-weight:600;font-size:1.02rem;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.q . x{flex:0 0 24px;width:24px;height:24px;border-radius:50%;background:var(--bg-soft-2);color:var(--leaf-deep);display:grid;place-items:center;font-size:1.1rem;transition:.3s}
+.q.open .x{background:var(--leaf-deep);color:#fff;transform:rotate(45deg)}
+.q .a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.q .a p{padding:0 22px 20px;color:var(--ink-soft);font-size:.96rem}
+
+/* ===== CTA band ===== */
+.cta-band{background:var(--leaf-deep);color:#fff;border-radius:28px;padding:58px;text-align:center;position:relative;overflow:hidden}
+.cta-band h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:14px}
+.cta-band p{color:rgba(255,255,255,.86);font-size:1.1rem;max-width:520px;margin:0 auto 28px}
+.cta-band .btn-primary{background:#fff;color:var(--leaf-deep)}
+.cta-band .btn-primary:hover{background:#f4f8ee}
+
+/* ===== CONTACT ===== */
+.contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+.contact-info h3{font-size:1.5rem;margin-bottom:14px}
+.contact-info p{color:var(--ink-soft);margin-bottom:26px}
+.cinfo{display:flex;gap:14px;align-items:center;margin-bottom:18px}
+.cinfo .ic{width:46px;height:46px;border-radius:12px;background:var(--bg-soft-2);color:var(--leaf-deep);display:grid;place-items:center;flex:0 0 46px}
+.cinfo b{display:block;font-size:.95rem}.cinfo span{font-size:.88rem;color:var(--ink-soft)}
+.form{background:#fff;border:1px solid var(--line);border-radius:24px;padding:34px;box-shadow:var(--shadow)}
+.form .calc-row{margin-bottom:18px}
+.form .field{margin-bottom:18px}
+.form textarea{padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;font-family:inherit;font-size:.95rem;resize:vertical;min-height:110px;transition:border-color .2s,box-shadow .2s}
+.form textarea:focus{outline:none;border-color:var(--leaf);box-shadow:0 0 0 4px rgba(111,166,60,.12)}
+.form .btn-primary{width:100%;justify-content:center}
+.form-ok{display:none;background:var(--bg-soft-2);border:1px solid var(--leaf-light);border-radius:14px;padding:16px;color:var(--leaf-deep);font-weight:600;text-align:center;margin-top:16px}
+
+/* ===== FOOTER ===== */
+footer{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 28px;margin-top:0}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+footer .brand{color:#fff}
+.foot-grid p{font-size:.92rem;margin-top:14px;max-width:280px}
+.foot-col h5{font-family:'Sora';color:#fff;font-size:1rem;margin-bottom:16px}
+.foot-col a{display:block;font-size:.92rem;margin-bottom:10px;color:rgba(255,255,255,.66);transition:color .2s}
+.foot-col a:hover{color:var(--leaf-light)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.85rem}
+.foot-bottom a{color:rgba(255,255,255,.66)}
+
+/* ===== WhatsApp float ===== */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:80;width:60px;height:60px;border-radius:50%;
+  background:#25D366;display:grid;place-items:center;box-shadow:0 10px 30px rgba(37,211,102,.45);
+  cursor:pointer;transition:transform .3s var(--ease);
+}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;background:#25D366;animation:pulse 2.2s ease-out infinite;z-index:-1}
+@keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.9);opacity:0}}
+.wa-tip{position:absolute;right:72px;background:#fff;color:var(--ink);font-size:.82rem;font-weight:600;padding:8px 13px;border-radius:10px;box-shadow:var(--shadow);white-space:nowrap;opacity:0;transform:translateX(10px);transition:.3s;pointer-events:none}
+.wa-float:hover .wa-tip{opacity:1;transform:translateX(0)}
+
+/* ===== reveal ===== */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}.reveal.d4{transition-delay:.32s}.reveal.d5{transition-delay:.4s}
+
+/* ===== admin modal ===== */
+.modal{position:fixed;inset:0;background:rgba(44,42,38,.55);backdrop-filter:blur(6px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.show{display:flex}
+.modal-box{background:#fff;border-radius:20px;width:100%;max-width:940px;max-height:88vh;overflow:auto;box-shadow:var(--shadow-lg)}
+.modal-head{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid var(--line);position:sticky;top:0;background:#fff;z-index:2}
+.modal-head h3{font-size:1.25rem}
+.modal-close{background:var(--bg-soft);border:none;width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:1.2rem;color:var(--ink)}
+.modal-body{padding:26px}
+.login-box{max-width:340px;margin:30px auto;text-align:center}
+.login-box input{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;margin:14px 0;font-family:inherit}
+.crm-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px}
+.crm-stat{background:var(--bg-soft);border-radius:14px;padding:16px;text-align:center}
+.crm-stat b{font-family:'Sora';font-size:1.8rem;color:var(--leaf-deep);display:block}
+.crm-stat span{font-size:.78rem;color:var(--ink-soft)}
+.crm-table{width:100%;border-collapse:collapse;font-size:.88rem}
+.crm-table th{text-align:left;padding:11px;border-bottom:2px solid var(--line);font-family:'Sora';font-size:.8rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink-soft)}
+.crm-table td{padding:11px;border-bottom:1px solid var(--line);vertical-align:top}
+.crm-table tr:hover{background:var(--bg-soft)}
+.pill{font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:99px;background:var(--bg-soft-2);color:var(--leaf-deep)}
+.crm-empty{text-align:center;padding:40px;color:var(--ink-soft)}
+.crm-actions{display:flex;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.mini-btn{font-size:.82rem;padding:9px 16px;border-radius:10px;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-weight:600;font-family:inherit}
+.mini-btn:hover{border-color:var(--leaf)}
+.lead-link{color:var(--leaf-deep);font-weight:700;cursor:pointer}
+
+/* ===== responsive ===== */
+@media(max-width:980px){
+  .hero-grid,.why-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+  .grid-services,.tgrid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .nav-links{display:none}.burger{display:flex}
+  .nav-links.open{display:flex;position:absolute;top:74px;left:0;right:0;background:#fff;flex-direction:column;padding:22px;gap:18px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  .grid-services,.tgrid,.steps,.calc-row,.foot-grid{grid-template-columns:1fr}
+  .sec{padding:64px 0}.hero{padding:120px 0 70px}
+  .cta-band{padding:40px 26px}.calc-card,.form{padding:26px}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#home" class="brand">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="40" height="40">
+          <!-- trunk -->
+          <path d="M31 64 V40" stroke="#5b4a36" stroke-width="2.4" fill="none"/>
+          <path d="M31 46 l-7 -6 M31 42 l7 -6 M31 50 l6 -5" stroke="#5b4a36" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+          <!-- leaves -->
+          <g fill="#9CCC65"><ellipse cx="20" cy="20" rx="7" ry="4" transform="rotate(-30 20 20)"/><ellipse cx="44" cy="20" rx="7" ry="4" transform="rotate(30 44 20)"/></g>
+          <g fill="#6FA63C"><ellipse cx="26" cy="13" rx="7" ry="4" transform="rotate(-12 26 13)"/><ellipse cx="38" cy="13" rx="7" ry="4" transform="rotate(12 38 13)"/></g>
+          <g fill="#3E7D1E"><ellipse cx="32" cy="9" rx="6.5" ry="4"/><ellipse cx="16" cy="28" rx="6" ry="3.6" transform="rotate(-40 16 28)"/><ellipse cx="48" cy="28" rx="6" ry="3.6" transform="rotate(40 48 28)"/></g>
+          <!-- calculator -->
+          <rect x="22" y="34" width="20" height="24" rx="2.5" fill="#fff" stroke="#3E7D1E" stroke-width="2"/>
+          <rect x="25" y="37" width="14" height="5" rx="1" fill="#9CCC65"/>
+          <g fill="#6FA63C"><rect x="25.5" y="45" width="3.5" height="3" rx=".6"/><rect x="30.5" y="45" width="3.5" height="3" rx=".6"/><rect x="35.5" y="45" width="3.5" height="3" rx=".6"/><rect x="25.5" y="49.5" width="3.5" height="3" rx=".6"/><rect x="30.5" y="49.5" width="3.5" height="3" rx=".6"/><rect x="35.5" y="49.5" width="3.5" height="3" rx=".6"/></g>
+        </svg>
+      </span>
+      <span>Accountant<span style="color:var(--leaf-deep)"> Business</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#process">Process</a>
+      <a href="#calc">Fee Estimate</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary" style="padding:11px 22px">Free Consultation</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true">
+    <svg width="100%" height="100%" preserveAspectRatio="none" style="position:absolute;inset:0">
+      <defs>
+        <radialGradient id="g1" cx="78%" cy="18%" r="55%">
+          <stop offset="0%" stop-color="#EEF5E4"/><stop offset="100%" stop-color="#ffffff"/>
+        </radialGradient>
+        <pattern id="dots" width="34" height="34" patternUnits="userSpaceOnUse">
+          <circle cx="2" cy="2" r="1.4" fill="#9CCC65" opacity=".28"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#g1)"/>
+      <rect width="100%" height="100%" fill="url(#dots)"/>
+    </svg>
+    <!-- animated growth line -->
+    <svg viewBox="0 0 400 200" style="position:absolute;right:2%;bottom:6%;width:340px;opacity:.5" preserveAspectRatio="none">
+      <polyline class="growline" points="10,170 80,150 150,110 220,120 290,60 380,30" fill="none" stroke="#6FA63C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="380" cy="30" r="5" fill="#3E7D1E"><animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/></circle>
+    </svg>
+  </div>
+
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">● Registered Accounting &amp; Tax Practitioners</span>
+      <h1 class="reveal d1">Clarity in every number, <span class="accent">growth in every season
+        <svg viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M2 9 Q50 2 100 7 T198 5" stroke="#9CCC65" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+      </span></h1>
+      <p class="lead reveal d2">Full-service accounting for South African startups, SMEs and growing companies — tax, bookkeeping, payroll, VAT and SARS compliance handled, so you can focus on building the business.</p>
+      <div class="hero-cta reveal d3">
+        <a href="#contact" class="btn btn-primary btn-lg">Book a Free Consultation →</a>
+        <a href="#calc" class="btn btn-ghost btn-lg">Get a Fee Estimate</a>
+      </div>
+      <div class="hero-trust reveal d4">
+        <div class="t"><b>250+</b><span>Businesses served</span></div>
+        <div class="t"><b>100%</b><span>SARS compliant filings</span></div>
+        <div class="t"><b>R299</b><span>Tax plans from / mo</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal d2">
+      <div class="float-chip fc-1"><span class="ic">✓</span> VAT submitted</div>
+      <div class="float-chip fc-2"><span class="ic">↑</span> Profit +18%</div>
+      <div class="hero-card">
+        <div class="hc-top"><h4>Monthly Snapshot</h4><span class="hc-badge">June 2026</span></div>
+        <div class="hc-row"><span class="l"><span class="dot">₿</span> Bookkeeping</span><span class="v">Up to date</span></div>
+        <div class="hc-row"><span class="l"><span class="dot">%</span> VAT 201</span><span class="v">Filed</span></div>
+        <div class="hc-row"><span class="l"><span class="dot">⛁</span> Payroll (EMP201)</span><span class="v">Submitted</span></div>
+        <div class="hc-row"><span class="l"><span class="dot">★</span> Tax health</span><span class="v" style="color:var(--leaf-deep)">Excellent</span></div>
+        <div class="hc-bar"><i id="heroBar"></i></div>
+        <p style="font-size:.8rem;color:var(--ink-soft);margin-top:10px">Compliance score · <b style="color:var(--leaf-deep)">96%</b></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== marquee ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>SARS eFiling&nbsp;&nbsp;&nbsp;Bookkeeping&nbsp;&nbsp;&nbsp;VAT 201&nbsp;&nbsp;&nbsp;Payroll &amp; PAYE&nbsp;&nbsp;&nbsp;CIPC Registration&nbsp;&nbsp;&nbsp;Annual Financial Statements&nbsp;&nbsp;&nbsp;Tax Planning&nbsp;&nbsp;&nbsp;Business Advisory&nbsp;&nbsp;&nbsp;</span>
+    <span>SARS eFiling&nbsp;&nbsp;&nbsp;Bookkeeping&nbsp;&nbsp;&nbsp;VAT 201&nbsp;&nbsp;&nbsp;Payroll &amp; PAYE&nbsp;&nbsp;&nbsp;CIPC Registration&nbsp;&nbsp;&nbsp;Annual Financial Statements&nbsp;&nbsp;&nbsp;Tax Planning&nbsp;&nbsp;&nbsp;Business Advisory&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<section class="sec" id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we do</span>
+      <h2>Everything your business needs to stay compliant &amp; grow</h2>
+      <p>One firm for your numbers — from day-to-day books to year-end statements and the strategy in between.</p>
+    </div>
+    <div class="grid-services">
+      <div class="svc reveal">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 7h6M9 11h6M9 15h4"/><rect x="4" y="3" width="16" height="18" rx="2"/></svg></div>
+        <h3>Tax &amp; SARS Compliance</h3>
+        <p>Income tax, provisional tax, VAT 201 and SARS eFiling — registered, accurate and always on time.</p>
+        <a href="#contact" class="lk">Talk to us →</a>
+      </div>
+      <div class="svc reveal d1">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+        <h3>Bookkeeping &amp; Accounting</h3>
+        <p>Monthly bookkeeping, reconciliations and management accounts that keep you in control of cash flow.</p>
+        <a href="#contact" class="lk">Talk to us →</a>
+      </div>
+      <div class="svc reveal d2">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="9" cy="7" r="3"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75M21 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+        <h3>Payroll &amp; PAYE</h3>
+        <p>Payslips, EMP201/EMP501, UIF and IRP5 reconciliations — your team paid right, every month.</p>
+        <a href="#contact" class="lk">Talk to us →</a>
+      </div>
+      <div class="svc reveal">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
+        <h3>Annual Financial Statements</h3>
+        <p>Compliant AFS and reports for banks, investors and SARS — signed off and audit-ready.</p>
+        <a href="#contact" class="lk">Talk to us →</a>
+      </div>
+      <div class="svc reveal d1">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <h3>CIPC &amp; Company Registration</h3>
+        <p>New company registration, annual returns, beneficial ownership and CIPC compliance done for you.</p>
+        <a href="#contact" class="lk">Talk to us →</a>
+      </div>
+      <div class="svc reveal d2">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><path d="M16 2l4 4-4 4"/></svg></div>
+        <h3>Tax Planning &amp; Advisory</h3>
+        <p>Proactive structuring, cash-flow forecasting and growth advice to legally lower your tax bill.</p>
+        <a href="#contact" class="lk">Talk to us →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY ===== -->
+<section class="sec why" id="why">
+  <div class="wrap why-grid">
+    <div class="reveal">
+      <span class="eyebrow">Why choose us</span>
+      <h2 style="font-size:clamp(1.9rem,3.4vw,2.6rem);margin:16px 0 18px">An accountant that actually picks up the phone</h2>
+      <p style="color:var(--ink-soft);font-size:1.06rem;margin-bottom:30px">No jargon, no surprise bills, no chasing. Just clear numbers, proactive advice and a partner invested in your business.</p>
+      <div class="why-list">
+        <div class="why-item"><span class="n"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></span><div><h4>Fixed monthly fees</h4><p>Know exactly what you pay. Transparent packages, no hidden hourly billing.</p></div></div>
+        <div class="why-item"><span class="n"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 2v20M2 12h20"/></svg></span><div><h4>Cloud &amp; paperless</h4><p>Xero / QuickBooks / Sage — your books accessible anywhere, anytime.</p></div></div>
+        <div class="why-item"><span class="n"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></span><div><h4>Always compliant</h4><p>Deadlines tracked for you — never miss a SARS or CIPC submission again.</p></div></div>
+        <div class="why-item"><span class="n"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><div><h4>Real human support</h4><p>A dedicated accountant on WhatsApp &amp; email — answers in hours, not weeks.</p></div></div>
+      </div>
+    </div>
+    <div class="why-visual reveal d2">
+      <h4 style="font-size:1.15rem;margin-bottom:6px">Your compliance calendar</h4>
+      <p style="font-size:.9rem;color:var(--ink-soft);margin-bottom:22px">We track every deadline so you don't have to.</p>
+      <div class="hc-row"><span class="l"><span class="dot" style="background:var(--bg-soft-2)">7</span> EMP201 — Payroll</span><span class="pill">Monthly</span></div>
+      <div class="hc-row"><span class="l"><span class="dot" style="background:var(--bg-soft-2)">25</span> VAT 201</span><span class="pill">Bi-monthly</span></div>
+      <div class="hc-row"><span class="l"><span class="dot" style="background:var(--bg-soft-2)">⌛</span> Provisional tax</span><span class="pill">Aug / Feb</span></div>
+      <div class="hc-row"><span class="l"><span class="dot" style="background:var(--bg-soft-2)">⎙</span> CIPC annual return</span><span class="pill">Yearly</span></div>
+      <div class="hc-row"><span class="l"><span class="dot" style="background:var(--bg-soft-2)">∑</span> Income tax (ITR14)</span><span class="pill">12 mo after YE</span></div>
+      <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:22px">Never miss a deadline →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="sec" id="process">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">How it works</span>
+      <h2>Getting started takes one conversation</h2>
+      <p>A simple, stress-free onboarding — most clients are fully set up within a week.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="num">01</span><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h4>Free consultation</h4><p>We learn your business and where you stand with SARS — no cost, no pressure.</p></div>
+      <div class="step reveal d1"><span class="num">02</span><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></div><h4>Custom proposal</h4><p>A fixed-fee package matched to exactly the services you need.</p></div>
+      <div class="step reveal d2"><span class="num">03</span><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M22 4L12 14.01l-3-3"/></svg></div><h4>Seamless onboarding</h4><p>We take over your books and SARS profile — paperless and painless.</p></div>
+      <div class="step reveal d3"><span class="num">04</span><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div><h4>Grow with confidence</h4><p>Monthly reports, proactive advice and full compliance, all year round.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CALCULATOR / LEAD MAGNET ===== -->
+<section class="sec calc" id="calc">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Instant estimate</span>
+      <h2>Get an indicative monthly fee in 20 seconds</h2>
+      <p>Answer three quick questions for a ballpark — then book a free call for an exact quote.</p>
+    </div>
+    <div class="calc-card reveal d1">
+      <div class="calc-row">
+        <div class="field">
+          <label for="cBiz">Business type</label>
+          <select id="cBiz">
+            <option value="1">Sole proprietor / freelancer</option>
+            <option value="1.6">Pty (Ltd) company</option>
+            <option value="2.1">VAT-registered company</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cTurn">Annual turnover</label>
+          <select id="cTurn">
+            <option value="1">Under R1 million</option>
+            <option value="1.5">R1m – R5m</option>
+            <option value="2.2">R5m – R20m</option>
+            <option value="3">Over R20m</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-row">
+        <div class="field">
+          <label for="cStaff">Payroll size</label>
+          <select id="cStaff">
+            <option value="0">No employees</option>
+            <option value="1">1 – 5 staff</option>
+            <option value="1.8">6 – 20 staff</option>
+            <option value="2.8">20+ staff</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="cService">Main need</label>
+          <select id="cService">
+            <option value="1">Tax &amp; compliance only</option>
+            <option value="1.4">Full monthly accounting</option>
+            <option value="1.8">Accounting + advisory / CFO</option>
+          </select>
+        </div>
+      </div>
+      <div class="calc-out">
+        <div class="est" id="cEst">R1,990</div>
+        <div class="lbl">estimated from / month (excl. VAT)</div>
+        <a href="#contact" class="btn btn-primary" onclick="prefillFromCalc()">Get my exact quote →</a>
+      </div>
+      <p class="calc-note">Indicative only. Final fee confirmed after your free consultation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="sec why" id="testimonials">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Client love</span>
+      <h2>Trusted by South African business owners</h2>
+    </div>
+    <div class="tgrid">
+      <div class="tcard reveal"><div class="stars">★★★★★</div><p>"They sorted out years of messy SARS history and got us compliant in weeks. I finally sleep at night knowing my tax is handled."</p><div class="who"><span class="av">TM</span><div><b>Thabo M.</b><span>Owner, Construction SME</span></div></div></div>
+      <div class="tcard reveal d1"><div class="stars">★★★★★</div><p>"Switching was effortless. Fixed monthly fee, replies on WhatsApp the same day, and my books have never been cleaner."</p><div class="who"><span class="av">LP</span><div><b>Lerato P.</b><span>Founder, E-commerce</span></div></div></div>
+      <div class="tcard reveal d2"><div class="stars">★★★★★</div><p>"More than accountants — actual advisors. Their tax planning saved us more than a year of fees. Highly recommend."</p><div class="who"><span class="av">RS</span><div><b>Riaan S.</b><span>MD, Logistics (Pty) Ltd</span></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Good to know</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq">
+      <div class="q reveal"><button>Do you work with businesses outside my city?<span class="x">+</span></button><div class="a"><p>Yes. We're fully cloud-based, so we serve clients across South Africa. Everything happens over secure online tools, email and WhatsApp — no in-person visits required.</p></div></div>
+      <div class="q reveal"><button>How much does it cost?<span class="x">+</span></button><div class="a"><p>Tax-only plans start from R299/month and full monthly accounting from around R1,990/month, depending on turnover, payroll and services. Use the estimate tool above, then book a free call for an exact, fixed quote.</p></div></div>
+      <div class="q reveal"><button>I'm behind on SARS — can you help?<span class="x">+</span></button><div class="a"><p>Absolutely. Catching up overdue returns, fixing penalties and getting clients compliant is one of the most common things we do. We'll assess where you stand at no cost.</p></div></div>
+      <div class="q reveal"><button>Can you register my new company?<span class="x">+</span></button><div class="a"><p>Yes — we handle CIPC company registration, tax registration, beneficial ownership filings and annual returns, so you start fully compliant from day one.</p></div></div>
+      <div class="q reveal"><button>Which accounting software do you use?<span class="x">+</span></button><div class="a"><p>We work with Xero, QuickBooks Online and Sage. If you're not on cloud software yet, we'll set you up and migrate your data as part of onboarding.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BAND ===== -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <svg style="position:absolute;right:-30px;top:-30px;width:220px;opacity:.14" viewBox="0 0 64 64"><g fill="#fff"><ellipse cx="20" cy="20" rx="7" ry="4" transform="rotate(-30 20 20)"/><ellipse cx="44" cy="20" rx="7" ry="4" transform="rotate(30 44 20)"/><ellipse cx="32" cy="9" rx="6.5" ry="4"/></g></svg>
+      <h2>Ready for stress-free numbers?</h2>
+      <p>Book your free, no-obligation consultation today and see how simple compliance can be.</p>
+      <a href="#contact" class="btn btn-primary btn-lg">Book Free Consultation →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="sec why" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Get in touch</span>
+      <h3 style="margin-top:14px">Let's talk about your business</h3>
+      <p>Send us a message and a dedicated accountant will reply within one business day — or message us on WhatsApp for the fastest response.</p>
+      <div class="cinfo"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></span><div><b>Email</b><span>aaliyahjacobs@gmail.com</span></div></div>
+      <div class="cinfo"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div><b>WhatsApp &amp; Call</b><span>+27 00 000 0000</span></div></div>
+      <div class="cinfo"><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><div><b>Hours</b><span>Mon–Fri · 08:00–17:00</span></div></div>
+      <a href="https://wa.me/27000000000?text=Hi%2C%20I%27d%20like%20a%20free%20accounting%20consultation" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:8px">Chat on WhatsApp</a>
+    </div>
+
+    <form class="form reveal d1" id="leadForm" autocomplete="on">
+      <div class="calc-row">
+        <div class="field"><label for="fName">Full name *</label><input id="fName" name="name" required placeholder="Your name" /></div>
+        <div class="field"><label for="fPhone">Phone / WhatsApp *</label><input id="fPhone" name="phone" required placeholder="082 123 4567" /></div>
+      </div>
+      <div class="calc-row">
+        <div class="field"><label for="fEmail">Email *</label><input id="fEmail" name="email" type="email" required placeholder="you@email.com" /></div>
+        <div class="field"><label for="fService">Service needed</label>
+          <select id="fService" name="service">
+            <option>Tax &amp; SARS compliance</option>
+            <option>Monthly bookkeeping</option>
+            <option>Payroll</option>
+            <option>Annual financial statements</option>
+            <option>CIPC / company registration</option>
+            <option>Tax planning &amp; advisory</option>
+            <option>Not sure — need advice</option>
+          </select>
+        </div>
+      </div>
+      <div class="field"><label for="fMsg">How can we help?</label><textarea id="fMsg" name="message" placeholder="Tell us a little about your business..."></textarea></div>
+      <button type="submit" class="btn btn-primary btn-lg">Send &amp; Book My Free Call →</button>
+      <div class="form-ok" id="formOk">✓ Thank you! Your request is in. We'll be in touch within one business day. Opening WhatsApp…</div>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#home" class="brand" style="color:#fff">
+          <span class="mark">
+            <svg viewBox="0 0 64 64" width="36" height="36">
+              <g fill="#9CCC65"><ellipse cx="20" cy="20" rx="7" ry="4" transform="rotate(-30 20 20)"/><ellipse cx="44" cy="20" rx="7" ry="4" transform="rotate(30 44 20)"/></g>
+              <g fill="#6FA63C"><ellipse cx="26" cy="13" rx="7" ry="4" transform="rotate(-12 26 13)"/><ellipse cx="38" cy="13" rx="7" ry="4" transform="rotate(12 38 13)"/></g>
+              <g fill="#3E7D1E"><ellipse cx="32" cy="9" rx="6.5" ry="4"/></g>
+              <rect x="22" y="34" width="20" height="24" rx="2.5" fill="#fff" stroke="#3E7D1E" stroke-width="2"/>
+              <rect x="25" y="37" width="14" height="5" rx="1" fill="#9CCC65"/>
+            </svg>
+          </span>
+          <span>Accountant Business</span>
+        </a>
+        <p>Full-service accounting, tax and advisory for South African businesses. Clarity in every number.</p>
+      </div>
+      <div class="foot-col"><h5>Services</h5><a href="#services">Tax &amp; SARS</a><a href="#services">Bookkeeping</a><a href="#services">Payroll</a><a href="#services">Financial Statements</a><a href="#services">CIPC Registration</a></div>
+      <div class="foot-col"><h5>Company</h5><a href="#why">Why Us</a><a href="#process">Our Process</a><a href="#testimonials">Reviews</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
+      <div class="foot-col"><h5>Get started</h5><a href="#contact">Free Consultation</a><a href="#calc">Fee Estimate</a><a href="https://wa.me/27000000000" target="_blank" rel="noopener">WhatsApp Us</a><a href="mailto:aaliyahjacobs@gmail.com">Email Us</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Accountant Business. All rights reserved.</span>
+      <span>Registered Tax Practitioners · POPIA compliant · <a href="#" id="adminLink">Admin</a></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== WhatsApp float ===== -->
+<a href="https://wa.me/27000000000?text=Hi%2C%20I%27d%20like%20a%20free%20accounting%20consultation" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <span class="wa-tip">Chat with us</span>
+  <svg width="32" height="32" viewBox="0 0 24 24" fill="#fff"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.001zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<!-- ===== ADMIN / CRM MODAL ===== -->
+<div class="modal" id="adminModal">
+  <div class="modal-box">
+    <div class="modal-head"><h3>📊 Lead CRM Dashboard</h3><button class="modal-close" id="modalClose">×</button></div>
+    <div class="modal-body">
+      <div id="loginView" class="login-box">
+        <p style="color:var(--ink-soft)">Enter admin password to view captured leads.</p>
+        <input type="password" id="adminPass" placeholder="Password" />
+        <button class="btn btn-primary" style="width:100%;justify-content:center" id="adminLogin">Log in</button>
+        <p style="font-size:.78rem;color:var(--ink-soft);margin-top:12px">Default: <b>admin2024</b> — change in code.</p>
+      </div>
+      <div id="crmView" style="display:none">
+        <div class="crm-stats">
+          <div class="crm-stat"><b id="stTotal">0</b><span>Total leads</span></div>
+          <div class="crm-stat"><b id="stWeek">0</b><span>This week</span></div>
+          <div class="crm-stat"><b id="stToday">0</b><span>Today</span></div>
+          <div class="crm-stat"><b id="stTop">—</b><span>Top service</span></div>
+        </div>
+        <div class="crm-actions">
+          <button class="mini-btn" id="exportCsv">⬇ Export CSV</button>
+          <button class="mini-btn" id="clearLeads">🗑 Clear all</button>
+        </div>
+        <div id="crmTableWrap"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== nav scroll ===== */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
+burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+/* ===== reveal on scroll ===== */
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ===== hero bar fill ===== */
+setTimeout(()=>{document.getElementById('heroBar').style.width='96%'},500);
+
+/* ===== FAQ ===== */
+document.querySelectorAll('.q button').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const q=b.parentElement,a=b.nextElementSibling,open=q.classList.contains('open');
+    document.querySelectorAll('.q').forEach(x=>{x.classList.remove('open');x.querySelector('.a').style.maxHeight=null});
+    if(!open){q.classList.add('open');a.style.maxHeight=a.scrollHeight+'px'}
+  });
+});
+
+/* ===== fee calculator ===== */
+const BASE=1200;
+function calcFee(){
+  const biz=+cBiz.value,turn=+cTurn.value,staff=+cStaff.value,svc=+cService.value;
+  let fee=BASE*biz*turn*svc + staff*650;
+  fee=Math.round(fee/50)*50;
+  document.getElementById('cEst').textContent='R'+fee.toLocaleString('en-ZA');
+  return fee;
+}
+['cBiz','cTurn','cStaff','cService'].forEach(id=>document.getElementById(id).addEventListener('change',calcFee));
+calcFee();
+function prefillFromCalc(){
+  const fee=calcFee();
+  const note=`Interested after fee estimate (~R${fee.toLocaleString('en-ZA')}/mo). `;
+  const m=document.getElementById('fMsg'); if(!m.value.startsWith('Interested')) m.value=note+m.value;
+}
+
+/* ===== CRM (localStorage) ===== */
+const LS_KEY='accountant_leads_v1';
+function getLeads(){try{return JSON.parse(localStorage.getItem(LS_KEY))||[]}catch(e){return[]}}
+function saveLead(l){const a=getLeads();a.unshift(l);localStorage.setItem(LS_KEY,JSON.stringify(a))}
+
+/* ===== form submit -> CRM + FormSubmit email + WhatsApp ===== */
+const WA_NUMBER='27000000000'; // ← replace with real WhatsApp number
+const CLIENT_EMAIL='aaliyahjacobs@gmail.com';
+const form=document.getElementById('leadForm');
+form.addEventListener('submit',async(e)=>{
+  e.preventDefault();
+  const lead={
+    name:fName.value.trim(),phone:fPhone.value.trim(),email:fEmail.value.trim(),
+    service:fService.value,message:fMsg.value.trim(),
+    date:new Date().toISOString()
+  };
+  saveLead(lead);
+  // email via FormSubmit (no backend) — silent AJAX
+  try{
+    await fetch('https://formsubmit.co/ajax/'+CLIENT_EMAIL,{
+      method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify({_subject:'New website lead: '+lead.name,...lead})
+    });
+  }catch(err){/* still saved locally */}
+  document.getElementById('formOk').style.display='block';
+  form.querySelector('button[type=submit]').textContent='✓ Sent';
+  // open WhatsApp prefilled
+  const txt=encodeURIComponent(`Hi, I'm ${lead.name}. I'd like help with ${lead.service}. ${lead.message}`);
+  setTimeout(()=>{window.open(`https://wa.me/${WA_NUMBER}?text=${txt}`,'_blank')},900);
+  form.reset();calcFee();
+});
+
+/* ===== admin modal ===== */
+const ADMIN_PASS='admin2024'; // ← change this
+const modal=document.getElementById('adminModal');
+document.getElementById('adminLink').addEventListener('click',e=>{e.preventDefault();modal.classList.add('show')});
+document.getElementById('modalClose').addEventListener('click',()=>modal.classList.remove('show'));
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('show')});
+document.getElementById('adminLogin').addEventListener('click',tryLogin);
+document.getElementById('adminPass').addEventListener('keydown',e=>{if(e.key==='Enter')tryLogin()});
+function tryLogin(){
+  if(document.getElementById('adminPass').value===ADMIN_PASS){
+    document.getElementById('loginView').style.display='none';
+    document.getElementById('crmView').style.display='block';
+    renderCRM();
+  }else{alert('Wrong password')}
+}
+function renderCRM(){
+  const leads=getLeads();
+  const now=new Date(),day=864e5;
+  const today=leads.filter(l=>now-new Date(l.date)<day).length;
+  const week=leads.filter(l=>now-new Date(l.date)<7*day).length;
+  document.getElementById('stTotal').textContent=leads.length;
+  document.getElementById('stWeek').textContent=week;
+  document.getElementById('stToday').textContent=today;
+  const counts={};leads.forEach(l=>counts[l.service]=(counts[l.service]||0)+1);
+  const top=Object.entries(counts).sort((a,b)=>b[1]-a[1])[0];
+  document.getElementById('stTop').textContent=top?top[0].split(' ')[0]:'—';
+  const wrap=document.getElementById('crmTableWrap');
+  if(!leads.length){wrap.innerHTML='<div class="crm-empty">No leads yet. Submitted enquiries appear here.</div>';return}
+  let h='<table class="crm-table"><tr><th>Date</th><th>Name</th><th>Contact</th><th>Service</th><th>Message</th></tr>';
+  leads.forEach(l=>{
+    const d=new Date(l.date).toLocaleString('en-ZA',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'});
+    h+=`<tr><td>${d}</td><td><b>${esc(l.name)}</b></td><td><span class="lead-link" onclick="window.open('https://wa.me/${l.phone.replace(/\\D/g,'')}')">${esc(l.phone)}</span><br><span style="font-size:.8rem;color:var(--ink-soft)">${esc(l.email)}</span></td><td><span class="pill">${esc(l.service)}</span></td><td style="max-width:220px">${esc(l.message||'—')}</td></tr>`;
+  });
+  h+='</table>';wrap.innerHTML=h;
+}
+function esc(s){return(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+document.getElementById('exportCsv').addEventListener('click',()=>{
+  const leads=getLeads();if(!leads.length)return alert('No leads to export');
+  const rows=[['Date','Name','Phone','Email','Service','Message'],...leads.map(l=>[l.date,l.name,l.phone,l.email,l.service,l.message])];
+  const csv=rows.map(r=>r.map(c=>`"${(c||'').toString().replace(/"/g,'""')}"`).join(',')).join('\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='leads.csv';a.click();
+});
+document.getElementById('clearLeads').addEventListener('click',()=>{if(confirm('Delete ALL leads? This cannot be undone.')){localStorage.removeItem(LS_KEY);renderCRM()}});
+</script>
+</body>
+</html>

@@ -295,9 +295,49 @@ footer .brand{color:#fff}
   .nav-links{display:none}.burger{display:flex}
   .nav-links.open{display:flex;position:absolute;top:74px;left:0;right:0;background:#fff;flex-direction:column;padding:22px;gap:18px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
   .grid-services,.tgrid,.steps,.calc-row,.foot-grid{grid-template-columns:1fr}
-  .sec{padding:64px 0}.hero{padding:120px 0 70px}
-  .cta-band{padding:40px 26px}.calc-card,.form{padding:26px}
+  .sec{padding:56px 0}.hero{padding:104px 0 56px}
+  .cta-band{padding:40px 24px}.calc-card,.form{padding:24px}
+  .wrap{padding:0 18px}
+  /* keep nav cta compact so brand + button fit one row */
+  .nav-cta .btn-primary{padding:10px 16px;font-size:.86rem}
+  .brand{font-size:1.04rem}.brand .mark{width:34px;height:34px;flex-basis:34px}
+  /* hero visual: drop floating chips that overflow small screens, shrink card */
+  .float-chip{display:none}
+  .hero-card{padding:22px}
+  .hero-visual{margin-top:8px}
+  .hero h1{font-size:clamp(2rem,8.5vw,2.6rem)}
+  .hero p.lead{font-size:1.04rem}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn{justify-content:center;width:100%}
+  .hero-trust{gap:18px;justify-content:space-between}
+  .hero-trust .t b{font-size:1.4rem}
+  .hero-bg svg:last-child{display:none} /* hide decorative growth line that can overflow */
+  /* tables / CRM scroll instead of overflow */
+  #crmTableWrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .crm-table{min-width:560px}
+  .crm-stats{grid-template-columns:1fr 1fr}
+  .modal-body{padding:18px}.modal-head{padding:18px 20px}
+  /* calculator selects easier to tap */
+  .calc-out .est{font-size:2.1rem}
+  .sec-head{margin-bottom:40px}
+  .why-visual,.calc-card{padding:24px}
 }
+/* very small iPhones (SE / mini ~375px and below) */
+@media(max-width:400px){
+  .wrap{padding:0 15px}
+  .hero h1{font-size:1.78rem}
+  .eyebrow{font-size:.72rem;padding:6px 11px}
+  .hero-trust{gap:12px}
+  .hero-trust .t b{font-size:1.25rem}.hero-trust .t span{font-size:.76rem}
+  .btn{padding:13px 20px;font-size:.92rem}.btn-lg{padding:15px 24px}
+  .svc,.tcard,.step,.form,.calc-card,.why-visual{padding:20px}
+  .sec-head h2{font-size:1.62rem}
+  .cta-band{padding:34px 20px}
+  .wa-float{width:54px;height:54px;bottom:18px;right:18px}
+  .crm-stats{grid-template-columns:1fr 1fr}
+}
+/* prevent any horizontal scroll on phones */
+@media(max-width:680px){ html,body{max-width:100%;overflow-x:hidden} img,svg,table{max-width:100%} }
 </style>
 </head>
 <body>

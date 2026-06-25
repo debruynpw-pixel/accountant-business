@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Accountant Business — Accounting, Tax &amp; Advisory for South Africa</title>
-<meta name="description" content="Full-service accounting firm: tax &amp; SARS, bookkeeping, payroll, VAT, financial statements, CIPC registration and business advisory. Clarity in every number." />
+<title>Aaliyah Jacobs Bookkeeping Services (Pty) Ltd — Accounting, Tax &amp; Bookkeeping South Africa</title>
+<meta name="description" content="Aaliyah Jacobs Bookkeeping Services (Pty) Ltd — full-service accounting: tax &amp; SARS, bookkeeping, payroll, VAT, financial statements and CIPC registration. Clarity in every number." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
 <style>
 :root{
   --leaf-light:#9CCC65;
@@ -77,6 +77,10 @@ header.nav{
 header.nav.scrolled{border-bottom-color:var(--line);box-shadow:0 4px 24px rgba(44,42,38,.05)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
 .brand{display:flex;align-items:center;gap:11px;font-family:'Sora';font-weight:800;font-size:1.18rem;letter-spacing:-.01em;white-space:nowrap}
+.brand .mark svg{display:block}
+.brand-txt{display:flex;flex-direction:column;line-height:1.04;gap:1px}
+.brand-txt b{font-family:'Sora';font-weight:700;font-size:1.02rem;color:var(--ink);letter-spacing:-.01em}
+.brand-txt small{font-family:'Manrope';font-weight:600;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--leaf-deep)}
 .brand .mark{width:40px;height:40px;flex:0 0 40px}
 .nav-links{display:flex;align-items:center;gap:30px}
 .nav-links a{font-size:.94rem;font-weight:600;color:var(--ink-soft);transition:color .2s;position:relative}
@@ -93,8 +97,8 @@ header.nav.scrolled{border-bottom-color:var(--line);box-shadow:0 4px 24px rgba(4
   display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:center;position:relative;z-index:2;
 }
 .hero h1{font-size:clamp(2.4rem,5vw,3.9rem);font-weight:800;margin:20px 0 18px}
-.hero h1 .accent{color:var(--leaf-deep);position:relative;white-space:nowrap}
-.hero h1 .accent svg{position:absolute;left:0;bottom:-10px;width:100%;height:14px}
+.hero h1 .accent{color:var(--leaf-deep);position:relative;white-space:normal}
+.hero h1 .accent svg{position:absolute;left:0;bottom:-10px;width:100%;height:14px;display:none}
 .hero p.lead{font-size:1.16rem;color:var(--ink-soft);max-width:540px;margin-bottom:30px}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
 .hero-trust{display:flex;gap:28px;margin-top:38px;flex-wrap:wrap}
@@ -357,21 +361,14 @@ footer .brand{color:#fff}
   <div class="wrap nav-inner">
     <a href="#home" class="brand">
       <span class="mark" aria-hidden="true">
-        <svg viewBox="0 0 64 64" width="40" height="40">
-          <!-- trunk -->
-          <path d="M31 64 V40" stroke="#5b4a36" stroke-width="2.4" fill="none"/>
-          <path d="M31 46 l-7 -6 M31 42 l7 -6 M31 50 l6 -5" stroke="#5b4a36" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-          <!-- leaves -->
-          <g fill="#9CCC65"><ellipse cx="20" cy="20" rx="7" ry="4" transform="rotate(-30 20 20)"/><ellipse cx="44" cy="20" rx="7" ry="4" transform="rotate(30 44 20)"/></g>
-          <g fill="#6FA63C"><ellipse cx="26" cy="13" rx="7" ry="4" transform="rotate(-12 26 13)"/><ellipse cx="38" cy="13" rx="7" ry="4" transform="rotate(12 38 13)"/></g>
-          <g fill="#3E7D1E"><ellipse cx="32" cy="9" rx="6.5" ry="4"/><ellipse cx="16" cy="28" rx="6" ry="3.6" transform="rotate(-40 16 28)"/><ellipse cx="48" cy="28" rx="6" ry="3.6" transform="rotate(40 48 28)"/></g>
-          <!-- calculator -->
-          <rect x="22" y="34" width="20" height="24" rx="2.5" fill="#fff" stroke="#3E7D1E" stroke-width="2"/>
-          <rect x="25" y="37" width="14" height="5" rx="1" fill="#9CCC65"/>
-          <g fill="#6FA63C"><rect x="25.5" y="45" width="3.5" height="3" rx=".6"/><rect x="30.5" y="45" width="3.5" height="3" rx=".6"/><rect x="35.5" y="45" width="3.5" height="3" rx=".6"/><rect x="25.5" y="49.5" width="3.5" height="3" rx=".6"/><rect x="30.5" y="49.5" width="3.5" height="3" rx=".6"/><rect x="35.5" y="49.5" width="3.5" height="3" rx=".6"/></g>
+        <svg viewBox="0 0 78 60" width="48" height="46">
+          <text x="1" y="44" font-family="'Playfair Display',Georgia,serif" font-size="50" font-weight="600" letter-spacing="-4" fill="#2f6b4a">AJ</text>
+          <path d="M5 46 C22 55 46 54 60 41" fill="none" stroke="#2f6b4a" stroke-width="2.4" stroke-linecap="round"/>
+          <path d="M58 38 C63 30 72 30 75 32 C70 40 61 41 58 38 Z" fill="#5E9A2E"/>
+          <path d="M56 42 C61 37 69 37 72 39 C66 45 59 45 56 42 Z" fill="#7FB53C"/>
         </svg>
       </span>
-      <span>Accountant<span style="color:var(--leaf-deep)"> Business</span></span>
+      <span class="brand-txt"><b>Aaliyah Jacobs</b><small>Bookkeeping Services</small></span>
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#services">Services</a>
@@ -412,7 +409,7 @@ footer .brand{color:#fff}
 
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow reveal">● Registered Accounting &amp; Tax Practitioners</span>
+      <span class="eyebrow reveal">● Registered Accounting</span>
       <h1 class="reveal d1">Clarity in every number, <span class="accent">growth in every season
         <svg viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M2 9 Q50 2 100 7 T198 5" stroke="#9CCC65" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
       </span></h1>
@@ -447,8 +444,8 @@ footer .brand{color:#fff}
 <!-- ===== marquee ===== -->
 <div class="marquee" aria-hidden="true">
   <div class="track">
-    <span>SARS eFiling&nbsp;&nbsp;&nbsp;Bookkeeping&nbsp;&nbsp;&nbsp;VAT 201&nbsp;&nbsp;&nbsp;Payroll &amp; PAYE&nbsp;&nbsp;&nbsp;CIPC Registration&nbsp;&nbsp;&nbsp;Annual Financial Statements&nbsp;&nbsp;&nbsp;Tax Planning&nbsp;&nbsp;&nbsp;Business Advisory&nbsp;&nbsp;&nbsp;</span>
-    <span>SARS eFiling&nbsp;&nbsp;&nbsp;Bookkeeping&nbsp;&nbsp;&nbsp;VAT 201&nbsp;&nbsp;&nbsp;Payroll &amp; PAYE&nbsp;&nbsp;&nbsp;CIPC Registration&nbsp;&nbsp;&nbsp;Annual Financial Statements&nbsp;&nbsp;&nbsp;Tax Planning&nbsp;&nbsp;&nbsp;Business Advisory&nbsp;&nbsp;&nbsp;</span>
+    <span>SARS eFiling&nbsp;&nbsp;&nbsp;Bookkeeping&nbsp;&nbsp;&nbsp;VAT 201&nbsp;&nbsp;&nbsp;Payroll &amp; PAYE&nbsp;&nbsp;&nbsp;CIPC Registration&nbsp;&nbsp;&nbsp;Annual Financial Statements&nbsp;&nbsp;&nbsp;Tax Planning&nbsp;&nbsp;&nbsp;</span>
+    <span>SARS eFiling&nbsp;&nbsp;&nbsp;Bookkeeping&nbsp;&nbsp;&nbsp;VAT 201&nbsp;&nbsp;&nbsp;Payroll &amp; PAYE&nbsp;&nbsp;&nbsp;CIPC Registration&nbsp;&nbsp;&nbsp;Annual Financial Statements&nbsp;&nbsp;&nbsp;Tax Planning&nbsp;&nbsp;&nbsp;</span>
   </div>
 </div>
 
@@ -489,12 +486,6 @@ footer .brand{color:#fff}
         <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
         <h3>CIPC &amp; Company Registration</h3>
         <p>New company registration, annual returns, beneficial ownership and CIPC compliance done for you.</p>
-        <a href="#contact" class="lk">Talk to us →</a>
-      </div>
-      <div class="svc reveal d2">
-        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 6v6l4 2"/><path d="M16 2l4 4-4 4"/></svg></div>
-        <h3>Tax Planning &amp; Advisory</h3>
-        <p>Proactive structuring, cash-flow forecasting and growth advice to legally lower your tax bill.</p>
         <a href="#contact" class="lk">Talk to us →</a>
       </div>
     </div>
@@ -588,7 +579,6 @@ footer .brand{color:#fff}
           <select id="cService">
             <option value="1">Tax &amp; compliance only</option>
             <option value="1.4">Full monthly accounting</option>
-            <option value="1.8">Accounting + advisory / CFO</option>
           </select>
         </div>
       </div>
@@ -673,7 +663,6 @@ footer .brand{color:#fff}
             <option>Payroll</option>
             <option>Annual financial statements</option>
             <option>CIPC / company registration</option>
-            <option>Tax planning &amp; advisory</option>
             <option>Not sure — need advice</option>
           </select>
         </div>
@@ -692,25 +681,24 @@ footer .brand{color:#fff}
       <div>
         <a href="#home" class="brand" style="color:#fff">
           <span class="mark">
-            <svg viewBox="0 0 64 64" width="36" height="36">
-              <g fill="#9CCC65"><ellipse cx="20" cy="20" rx="7" ry="4" transform="rotate(-30 20 20)"/><ellipse cx="44" cy="20" rx="7" ry="4" transform="rotate(30 44 20)"/></g>
-              <g fill="#6FA63C"><ellipse cx="26" cy="13" rx="7" ry="4" transform="rotate(-12 26 13)"/><ellipse cx="38" cy="13" rx="7" ry="4" transform="rotate(12 38 13)"/></g>
-              <g fill="#3E7D1E"><ellipse cx="32" cy="9" rx="6.5" ry="4"/></g>
-              <rect x="22" y="34" width="20" height="24" rx="2.5" fill="#fff" stroke="#3E7D1E" stroke-width="2"/>
-              <rect x="25" y="37" width="14" height="5" rx="1" fill="#9CCC65"/>
+            <svg viewBox="0 0 78 60" width="44" height="42">
+              <text x="1" y="44" font-family="'Playfair Display',Georgia,serif" font-size="50" font-weight="600" letter-spacing="-4" fill="#9CCC65">AJ</text>
+              <path d="M5 46 C22 55 46 54 60 41" fill="none" stroke="#9CCC65" stroke-width="2.4" stroke-linecap="round"/>
+              <path d="M58 38 C63 30 72 30 75 32 C70 40 61 41 58 38 Z" fill="#9CCC65"/>
+              <path d="M56 42 C61 37 69 37 72 39 C66 45 59 45 56 42 Z" fill="#bfe39a"/>
             </svg>
           </span>
-          <span>Accountant Business</span>
+          <span class="brand-txt"><b style="color:#fff">Aaliyah Jacobs</b><small>Bookkeeping Services</small></span>
         </a>
-        <p>Full-service accounting, tax and advisory for South African businesses. Clarity in every number.</p>
+        <p>Full-service accounting, tax and bookkeeping for South African businesses. Clarity in every number.</p>
       </div>
       <div class="foot-col"><h5>Services</h5><a href="#services">Tax &amp; SARS</a><a href="#services">Bookkeeping</a><a href="#services">Payroll</a><a href="#services">Financial Statements</a><a href="#services">CIPC Registration</a></div>
       <div class="foot-col"><h5>Company</h5><a href="#why">Why Us</a><a href="#process">Our Process</a><a href="#testimonials">Reviews</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
       <div class="foot-col"><h5>Get started</h5><a href="#contact">Free Consultation</a><a href="#calc">Fee Estimate</a><a href="https://wa.me/27818181177" target="_blank" rel="noopener">WhatsApp Us</a><a href="mailto:aaliyahjacobs@gmail.com">Email Us</a></div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 Accountant Business. All rights reserved.</span>
-      <span>Registered Tax Practitioners · POPIA compliant · <a href="#" id="adminLink">Admin</a></span>
+      <span>© 2026 Aaliyah Jacobs Bookkeeping Services (Pty) Ltd. All rights reserved.</span>
+      <span>Registered Accounting · POPIA compliant · <a href="#" id="adminLink">Admin</a></span>
     </div>
   </div>
 </footer>

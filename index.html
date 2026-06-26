@@ -584,8 +584,8 @@ footer .brand{color:#fff}
         </div>
       </div>
       <div class="calc-out">
-        <div class="est" id="cEst">R1,990</div>
-        <div class="lbl">estimated from / month (excl. VAT)</div>
+        <div class="est" id="cEst">R1,000</div>
+        <div class="lbl">estimated from / month</div>
         <a href="#contact" class="btn btn-primary" onclick="prefillFromCalc()">Get my exact quote →</a>
       </div>
       <p class="calc-note">Indicative only. Final fee confirmed after your free consultation.</p>
@@ -763,11 +763,12 @@ document.querySelectorAll('.q button').forEach(b=>{
 });
 
 /* ===== fee calculator ===== */
-const BASE=1200;
+const BASE=1000;
 function calcFee(){
   const biz=+cBiz.value,turn=+cTurn.value,staff=+cStaff.value,svc=+cService.value;
   let fee=BASE*biz*turn*svc + staff*650;
   fee=Math.round(fee/50)*50;
+  fee=Math.max(1000,fee);
   document.getElementById('cEst').textContent='R'+fee.toLocaleString('en-ZA');
   return fee;
 }

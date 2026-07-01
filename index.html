@@ -422,7 +422,7 @@ footer .brand{color:#fff}
       <div class="hero-trust reveal d4">
         <div class="t"><b>250+</b><span>Businesses served</span></div>
         <div class="t"><b>100%</b><span>SARS compliant filings</span></div>
-        <div class="t"><b>R299</b><span>Tax plans from / mo</span></div>
+        <div class="t"><b>R850</b><span>Plans from / mo</span></div>
       </div>
     </div>
 
@@ -445,8 +445,8 @@ footer .brand{color:#fff}
 <!-- ===== marquee ===== -->
 <div class="marquee" aria-hidden="true">
   <div class="track">
-    <span>SARS eFiling&nbsp;&nbsp;&nbsp;Bookkeeping&nbsp;&nbsp;&nbsp;VAT 201&nbsp;&nbsp;&nbsp;Payroll &amp; PAYE&nbsp;&nbsp;&nbsp;CIPC Registration&nbsp;&nbsp;&nbsp;Annual Financial Statements&nbsp;&nbsp;&nbsp;Tax Planning&nbsp;&nbsp;&nbsp;</span>
-    <span>SARS eFiling&nbsp;&nbsp;&nbsp;Bookkeeping&nbsp;&nbsp;&nbsp;VAT 201&nbsp;&nbsp;&nbsp;Payroll &amp; PAYE&nbsp;&nbsp;&nbsp;CIPC Registration&nbsp;&nbsp;&nbsp;Annual Financial Statements&nbsp;&nbsp;&nbsp;Tax Planning&nbsp;&nbsp;&nbsp;</span>
+    <span>SARS eFiling&nbsp;&nbsp;&nbsp;Bookkeeping&nbsp;&nbsp;&nbsp;VAT 201&nbsp;&nbsp;&nbsp;Payroll &amp; PAYE&nbsp;&nbsp;&nbsp;CIPC Registration&nbsp;&nbsp;&nbsp;Annual Financial Statements&nbsp;&nbsp;&nbsp;</span>
+    <span>SARS eFiling&nbsp;&nbsp;&nbsp;Bookkeeping&nbsp;&nbsp;&nbsp;VAT 201&nbsp;&nbsp;&nbsp;Payroll &amp; PAYE&nbsp;&nbsp;&nbsp;CIPC Registration&nbsp;&nbsp;&nbsp;Annual Financial Statements&nbsp;&nbsp;&nbsp;</span>
   </div>
 </div>
 
@@ -584,7 +584,7 @@ footer .brand{color:#fff}
         </div>
       </div>
       <div class="calc-out">
-        <div class="est" id="cEst">R1,000</div>
+        <div class="est" id="cEst">R850</div>
         <div class="lbl">estimated from / month</div>
         <a href="#contact" class="btn btn-primary" onclick="prefillFromCalc()">Get my exact quote →</a>
       </div>
@@ -603,7 +603,7 @@ footer .brand{color:#fff}
     <div class="tgrid">
       <div class="tcard reveal"><div class="stars">★★★★★</div><p>"They sorted out years of messy SARS history and got us compliant in weeks. I finally sleep at night knowing my tax is handled."</p><div class="who"><span class="av">TM</span><div><b>Thabo M.</b><span>Owner, Construction SME</span></div></div></div>
       <div class="tcard reveal d1"><div class="stars">★★★★★</div><p>"Switching was effortless. Fixed monthly fee, replies on WhatsApp the same day, and my books have never been cleaner."</p><div class="who"><span class="av">LP</span><div><b>Lerato P.</b><span>Founder, E-commerce</span></div></div></div>
-      <div class="tcard reveal d2"><div class="stars">★★★★★</div><p>"More than accountants — actual advisors. Their tax planning saved us more than a year of fees. Highly recommend."</p><div class="who"><span class="av">RS</span><div><b>Riaan S.</b><span>MD, Logistics (Pty) Ltd</span></div></div></div>
+      <div class="tcard reveal d2"><div class="stars">★★★★★</div><p>"More than accountants — actual advisors. Their proactive advice saved us more than a year of fees. Highly recommend."</p><div class="who"><span class="av">RS</span><div><b>Riaan S.</b><span>MD, Logistics (Pty) Ltd</span></div></div></div>
     </div>
   </div>
 </section>
@@ -617,7 +617,7 @@ footer .brand{color:#fff}
     </div>
     <div class="faq">
       <div class="q reveal"><button>Do you work with businesses outside my city?<span class="x">+</span></button><div class="a"><p>Yes. We're fully cloud-based, so we serve clients across South Africa. Everything happens over secure online tools, email and WhatsApp — no in-person visits required.</p></div></div>
-      <div class="q reveal"><button>How much does it cost?<span class="x">+</span></button><div class="a"><p>Tax-only plans start from R299/month and full monthly accounting from around R1,990/month, depending on turnover, payroll and services. Use the estimate tool above, then book a free call for an exact, fixed quote.</p></div></div>
+      <div class="q reveal"><button>How much does it cost?<span class="x">+</span></button><div class="a"><p>Plans start from R850/month and full monthly accounting from around R1,990/month, depending on turnover, payroll and services. Use the estimate tool above, then book a free call for an exact, fixed quote.</p></div></div>
       <div class="q reveal"><button>I'm behind on SARS — can you help?<span class="x">+</span></button><div class="a"><p>Absolutely. Catching up overdue returns, fixing penalties and getting clients compliant is one of the most common things we do. We'll assess where you stand at no cost.</p></div></div>
       <div class="q reveal"><button>Can you register my new company?<span class="x">+</span></button><div class="a"><p>Yes — we handle CIPC company registration, tax registration, beneficial ownership filings and annual returns, so you start fully compliant from day one.</p></div></div>
       <div class="q reveal"><button>Which accounting software do you use?<span class="x">+</span></button><div class="a"><p>We work with Xero, QuickBooks Online and Sage. If you're not on cloud software yet, we'll set you up and migrate your data as part of onboarding.</p></div></div>
@@ -765,12 +765,12 @@ document.querySelectorAll('.q button').forEach(b=>{
 });
 
 /* ===== fee calculator ===== */
-const BASE=1000;
+const BASE=850;
 function calcFee(){
   const biz=+cBiz.value,turn=+cTurn.value,staff=+cStaff.value,svc=+cService.value;
   let fee=BASE*biz*turn*svc + staff*650;
   fee=Math.round(fee/50)*50;
-  fee=Math.max(1000,fee);
+  fee=Math.max(850,fee);
   document.getElementById('cEst').textContent='R'+fee.toLocaleString('en-ZA');
   return fee;
 }
